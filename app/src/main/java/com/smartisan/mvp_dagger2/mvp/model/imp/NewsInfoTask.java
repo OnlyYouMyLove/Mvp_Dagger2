@@ -2,12 +2,12 @@ package com.smartisan.mvp_dagger2.mvp.model.imp;
 
 import android.arch.lifecycle.Lifecycle;
 
+import com.smartisan.mvp_dagger2.App;
 import com.smartisan.mvp_dagger2.BuildConfig;
 import com.smartisan.mvp_dagger2.entity.NewsInfo;
 import com.smartisan.mvp_dagger2.finals.Constant;
 import com.smartisan.mvp_dagger2.mvp.model.interfaces.LoadTasksCallBack;
 import com.smartisan.mvp_dagger2.mvp.model.interfaces.NetTask;
-import com.smartisan.mvp_dagger2.net.manager.RetrofitManager;
 import com.smartisan.mvp_dagger2.net.service.NewsService;
 import com.trello.rxlifecycle2.LifecycleProvider;
 
@@ -23,7 +23,7 @@ public class NewsInfoTask implements NetTask {
     @Override
     public void execute(LifecycleProvider lifecycleProvider,String type, final LoadTasksCallBack callBack) {
 
-        RetrofitManager.getInstance().getRetrofit(Constant.BASEURL).create(NewsService.class)
+        App.getNetTaskComponent().getRetrofitManager().getRetrofit(Constant.BASEURL).create(NewsService.class)
                 .getNewsInfo(type, BuildConfig.NewKey)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

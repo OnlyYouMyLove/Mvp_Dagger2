@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements NewsInfoContract.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         DaggerMainActivityComponent.builder().newsInfoModule(new NewsInfoModule(this))
-                .netTaskComponent(App.get(this).getNetTaskComponent()).build().inject(this);
+                .netTaskComponent(App.getNetTaskComponent()).build().inject(this);
         mNew_Content = findViewById(R.id.tv_content);
         mDialog = new ProgressDialog(this);
         mDialog.setTitle(R.string.dialog_get_info);

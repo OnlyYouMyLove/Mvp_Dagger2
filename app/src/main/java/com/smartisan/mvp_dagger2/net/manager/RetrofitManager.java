@@ -16,15 +16,7 @@ public class RetrofitManager {
     private static String sUrl = "";
     private static final int TIMEOUT = 20;
 
-    private RetrofitManager() {
-    }
-
-    public static RetrofitManager getInstance() {
-        return RetrofitManagerHolder.sInstance;
-    }
-
-    private static class RetrofitManagerHolder {
-        private static final RetrofitManager sInstance = new RetrofitManager();
+    public RetrofitManager() {
     }
 
     public Retrofit getRetrofit(String baseUrl) {
