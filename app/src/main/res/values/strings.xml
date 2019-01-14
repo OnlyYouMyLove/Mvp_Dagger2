@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Mvp_Dagger2</string>
+    <string name="get_news">获取数据</string>
+    <string name="default_news">Hello World!</string>
+    <string name="dialog_get_info">获取数据中</string>
+    <string name="toast_net_tip">请检查网络设置是否正确</string>
+</resources>
